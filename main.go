@@ -10,14 +10,23 @@ func main() {
     var numFloat float64
 	numFloat = float64(a)
     fmt.Printf("%.2f", numFloat)*/
-    fmt.Println(calculator.Add(2,3,5))
-    fmt.Println(calculator.Diff(2,3))
-    fmt.Println(calculator.Mult(2,3))
-    fmt.Println(calculator.Div(2,3))
-    fmt.Println(calculator.Sqrt(9))
-    fmt.Println(calculator.Pow(2,3))
-    fmt.Println(calculator.Pow10(2))
-    fmt.Println(calculator.Sincos(0))
-    fmt.Println(calculator.Exp(2))
-    fmt.Println(calculator.Log(4))
+    var first int
+    fmt.Println("Enter first number: ")
+    fmt.Scanln(&first)
+    var second int
+    fmt.Println("Enter second number: ")
+    fmt.Scanln(&second)
+    var third int
+    fmt.Println("Enter third number: ")
+    fmt.Scanln(&third)
+    fmt.Println(calculator.Add(first,second,third))
+    fmt.Println(calculator.Diff(first,second))
+    fmt.Println(calculator.Mult(first,second))
+    fmt.Println(calculator.Div(first,second))
+    fmt.Println(calculator.Sqrt(first))
+    fmt.Println(calculator.Pow(first,second))
+    fmt.Println(calculator.Pow10(first))
+    fmt.Println(calculator.Sincos(first))
+    fmt.Println(calculator.Exp(first))
+    fmt.Println(calculator.Log(first))
 }
