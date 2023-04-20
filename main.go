@@ -19,14 +19,20 @@ func main() {
     var third int
     fmt.Println("Enter third number: ")
     fmt.Scanln(&third)
+    var fourth,fifth float64
+    fmt.Println("Enter fourth number: ")
+    fmt.Scanln(&fourth)
+    fmt.Println("Enter fifth number: ")
+    fmt.Scanln(&fifth)
+    
     fmt.Println(calculator.Add(first,second,third))
     fmt.Println(calculator.Diff(first,second))
     fmt.Println(calculator.Mult(first,second))
     fmt.Println(calculator.Div(first,second))
-    fmt.Println(calculator.Sqrt(first))
-    fmt.Println(calculator.Pow(first,second))
+    fmt.Println(calculator.Sqrt(fourth))
+    fmt.Println(calculator.Pow(fourth,fifth))
     fmt.Println(calculator.Pow10(first))
-    fmt.Println(calculator.Sincos(first))
-    fmt.Println(calculator.Exp(first))
-    fmt.Println(calculator.Log(first))
+    fmt.Println(calculator.Sincos(fourth))
+    fmt.Println(calculator.Exp(fourth))
+    fmt.Println(calculator.Log(fourth))
 }
