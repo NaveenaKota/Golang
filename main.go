@@ -24,6 +24,8 @@ func main() {
         fmt.Println(fibnocciFun(first))
     case "Prime":
         primeFun(first)
+    case "Palindrome":
+        palindromeFun(first)
     default: 
         fmt.Println("Invalid input")
     }
@@ -87,3 +89,18 @@ func fibnocciFun(x int) int{
         return x * fibnocciFun(x -1)
     }
 }  
+
+func palindromeFun(x int) {
+    var originalNumber,reverseNumber,rem int
+    originalNumber = x
+    for ; x != 0 ; {
+        rem = x % 10
+        reverseNumber = reverseNumber * 10 + rem
+        x = x/10
+    }
+    if originalNumber == reverseNumber {
+        fmt.Println(originalNumber, "is palindrome number")
+    } else {
+        fmt.Println(originalNumber, "is not palindrome number")
+    }
+}
