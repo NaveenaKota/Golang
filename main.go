@@ -13,15 +13,24 @@ func main() {
     var first int
     fmt.Println("Enter first number: ")
     fmt.Scanln(&first)
-    if first % 2 == 0 {
-        fmt.Println(first, " is even")
-    } else {
-        fmt.Println(first, " is odd")
+    var example,ch string 
+    fmt.Println("Enter check: ")
+    fmt.Scanln(&example)
+    ch  = example
+    switch ch {
+    case "OddEven":
+        OddEvenFun(first)
+    case "Fibnocci":
+        fmt.Println(fibnocciFun(first))
+    case "Prime":
+        primeFun(first)
+    default: 
+        fmt.Println("Invalid input")
     }
-  /*  var second int
+ /*   var second int
     fmt.Println("Enter second number: ")
-    fmt.Scanln(&second)
-    var third int
+    fmt.Scanln(&second)*/
+    /* var third int
     fmt.Println("Enter third number: ")
     fmt.Scanln(&third)
     var fourth,fifth float64
@@ -40,4 +49,41 @@ func main() {
     fmt.Println(calculator.Sincos(fourth))
     fmt.Println(calculator.Exp(fourth))
     fmt.Println(calculator.Log(fourth)) */
+
 }
+func OddEvenFun(x int) {
+    if x % 2 == 0 {
+       fmt.Println(x, " is even")
+    } else {
+       fmt.Println(x, " is odd")
+    }
+} 
+func primeFun(x int) {
+    var flag int = 0
+    if x == 0 || x ==1 {
+        fmt.Println(x, "is not prime")
+    } else {
+        var i int =2
+        for  ; i < x ; i++ {
+            if x % i == 0 {
+                flag = 1
+                break
+            }
+        }
+        if flag == 1 {
+            fmt.Println(x, "is not prime")
+        } else {
+            fmt.Println(x, "is prime")
+        }
+    }
+}
+
+func fibnocciFun(x int) int{
+    if x == 1 {
+        return x
+    } else if x == 2 {
+        return x
+    } else {
+        return x * fibnocciFun(x -1)
+    }
+}  
