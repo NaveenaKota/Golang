@@ -2,7 +2,7 @@ package main
 
 import (
     "fmt"
-    "calculator"
+  //  "calculator"
 )
 func main() {
     /*
@@ -13,7 +13,12 @@ func main() {
     var first int
     fmt.Println("Enter first number: ")
     fmt.Scanln(&first)
-    var second int
+    if first % 2 == 0 {
+        fmt.Println(first, " is even")
+    } else {
+        fmt.Println(first, " is odd")
+    }
+  /*  var second int
     fmt.Println("Enter second number: ")
     fmt.Scanln(&second)
     var third int
@@ -34,5 +39,5 @@ func main() {
     fmt.Println(calculator.Pow10(first))
     fmt.Println(calculator.Sincos(fourth))
     fmt.Println(calculator.Exp(fourth))
-    fmt.Println(calculator.Log(fourth))
+    fmt.Println(calculator.Log(fourth)) */
 }
