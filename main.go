@@ -81,12 +81,12 @@ func primeFun(x int) {
 }
 
 func fibnocciFun(x int) int{
-    if x == 1 {
+    if x == 0 {
         return x
-    } else if x == 2 {
+    } else if x == 1 {
         return x
     } else {
-        return x * fibnocciFun(x -1)
+        return fibnocciFun(x-1) + fibnocciFun(x-2)
     }
 }  
 
