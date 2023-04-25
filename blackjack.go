@@ -8,7 +8,7 @@ func main() {
 	if ( dealerResult > 21 && dealerResult < 17)  && (firstResult > 21 && firstResult < 17) && (SecondResult >21 && SecondResult < 17) {
 		fmt.Println("No Wins")
 	} else if (dealerResult ==21) {
-		fmt.Println(strPlayers[0], "is Winner")
+		fmt.Println(strPlayers[0], "is Winner")	
 	} else if (firstResult == 21) {
 		fmt.Println(strPlayers[1], "is Winner")
 	} else if (SecondResult == 21 ) {
@@ -26,14 +26,12 @@ func main() {
 			} else {
 				fmt.Println("No Wins")
 			}
-		} else if SecondResult > dealerResult && SecondResult > firstResult {
+		} else {
 			if (SecondResult == 21 ||  (SecondResult > 17 && SecondResult < 21)) {
 				fmt.Println(strPlayers[1], "is Winner")
 			} else {
 				fmt.Println("No Wins")
 			}
-		} else {
-			fmt.Println ("other")
 		}
 	}
 }
