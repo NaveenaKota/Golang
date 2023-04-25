@@ -15,23 +15,48 @@ func main() {
 		fmt.Println(strPlayers[2], "is Winner")
 	} else {
 		if dealerResult > firstResult && dealerResult > SecondResult {
-			if dealerResult == 21 ||  (dealerResult > 17 && dealerResult < 21) {
-				fmt.Println(strPlayers[0], "is Winner")
+			if dealerResult > 21{
+				if firstResult > SecondResult {
+					fmt.Println(strPlayers[1], "is Winner")
+				} else {
+					fmt.Println(strPlayers[2], "is Winner")
+				}
 			} else {
-				fmt.Println("No Wins")
+				if dealerResult > 17 && dealerResult < 21 {
+					fmt.Println(strPlayers[0], "is Winner")
+				} else {
+					fmt.Println("No Wins")
+				}
 			}
 		} else if firstResult > dealerResult && firstResult > SecondResult {
-			if firstResult == 21 ||  (firstResult > 17 && firstResult < 21) {
-				fmt.Println(strPlayers[1], "is Winner")
+			if firstResult > 21 {
+				if dealerResult > SecondResult {
+					fmt.Println(strPlayers[0], "is Winner")
+				} else {
+					fmt.Println(strPlayers[2], "is Winner")
+				}
 			} else {
-				fmt.Println("No Wins")
+				if firstResult > 17 && firstResult < 21 {
+					fmt.Println(strPlayers[1], "is Winner")
+				} else {
+					fmt.Println("No Wins")
+				}
 			}
 		} else {
-			if (SecondResult == 21 ||  (SecondResult > 17 && SecondResult < 21)) {
-				fmt.Println(strPlayers[1], "is Winner")
+			if SecondResult > 21 {
+				if dealerResult > firstResult {
+					fmt.Println(strPlayers[0], "is Winner")					
+				} else {
+					fmt.Println(strPlayers[1], "is Winner")
+				}
 			} else {
-				fmt.Println("No Wins")
+				if SecondResult > 17 && SecondResult < 21 {
+					fmt.Println(strPlayers[1], "is Winner")
+				} else {
+					fmt.Println("No Wins")
+				}
 			}
+
 		}
 	}
 }
