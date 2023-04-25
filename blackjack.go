@@ -13,6 +13,12 @@ func main() {
 		fmt.Println(strPlayers[1], "is Winner")
 	} else if (SecondResult == 21 ) {
 		fmt.Println(strPlayers[2], "is Winner")
+	} else if dealerResult > 21 && firstResult > 21 {
+		fmt.Println(strPlayers[2], "is Winner")
+	} else if dealerResult > 21 && SecondResult > 21 {
+		fmt.Println(strPlayers[1], "is Winner")
+	} else if SecondResult >21 && firstResult > 21 {
+		fmt.Println(strPlayers[0], "is Winner")
 	} else {
 		if dealerResult > firstResult && dealerResult > SecondResult {
 			if dealerResult > 21{
