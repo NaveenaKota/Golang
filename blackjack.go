@@ -5,7 +5,7 @@ var dealerResult, firstResult, SecondResult int
 var strPlayers = [3]string {"dealer", "player1", "player2"}
 func main() {
 	blackjack()
-	if ( dealerResult > 21 && dealerResult < 17)  && (firstResult > 21 && firstResult < 17) && (SecondResult >21 && SecondResult < 17) {
+	if ( dealerResult > 21 || dealerResult < 17)  && (firstResult > 21 || firstResult < 17) && (SecondResult >21 || SecondResult < 17) {
 		fmt.Println("No Wins")
 	} else if (dealerResult ==21) {
 		fmt.Println(strPlayers[0], "is Winner")	
