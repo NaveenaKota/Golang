@@ -9,9 +9,9 @@ type Students struct {
 	Age int
 }
 func main () {
-	pointers()
+	//pointers()
 	arrays()
-	slices()
+	//slices()
 }
 func pointers() {
 	student1 := Students{"Naveena", "Golang", "F", 25}
@@ -32,13 +32,16 @@ func pointers() {
 }
 
 func arrays() {
-	var myarray = [7] string{"Naveena", "Manikanta", "Soumya", "Sohan", "Praharsha", "Mounika", "Shanmukh"}
+	var myarray = [9] string{"Naveena", "Manikanta", "Soumya", "Sohan", "Praharsha", "Mounika", "Shanmukh"}
 	for i :=0; i < len(myarray) ;i++ {
 		if myarray[i] == "Soumya" {
 			myarray[i] = "Phani"
 		}
 		fmt.Println(myarray[i])
 	}
+	//myarray[7] = "Sai"
+	//myarray = append(myarray, "Sai") we cannot add element to array ----- first argument to append must be a slice
+	fmt.Println(myarray)
 	var s []string = myarray[:6]
 	fmt.Println(len(s), cap(s)) //Here the length is 6 and capacity is 7
 	fmt.Println(s)
