@@ -78,7 +78,7 @@ func conditions() {
 					}
 				} else {
 					if SecondResult > 17 && SecondResult < 21 {
-						fmt.Println(strPlayers[1], "is Winner")
+						fmt.Println(strPlayers[2], "is Winner")
 					} else {
 						fmt.Println("No Wins")
 					}
