@@ -9,9 +9,9 @@ type Students struct {
 	Age int
 }
 func main () {
-	//pointers()
+	pointers()
 	arrays()
-	//slices()
+	slices()
 }
 func pointers() {
 	student1 := Students{"Naveena", "Golang", "F", 25}
