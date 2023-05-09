@@ -12,6 +12,9 @@ func main () {
 	pointers()
 	arrays()
 	slices()
+	student4 := Students{"Naveena", "Golang", "F", 25}
+	greeting := student4.GetGreeting()
+    fmt.Println(greeting)
 }
 func pointers() {
 	student1 := Students{"Naveena", "Golang", "F", 25}
@@ -30,6 +33,11 @@ func pointers() {
 	student2.Age = 24
 	fmt.Println(student1, student2, student3)
 }
+
+func (p Students) GetGreeting() string {
+    return fmt.Sprintf("Hello, my name is %s and I'm %d years old.", p.Name, p.Age)
+}
+
 
 func arrays() {
 	var myarray = [9] string{"Naveena", "Manikanta", "Soumya", "Sohan", "Praharsha", "Mounika", "Shanmukh"}

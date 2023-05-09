@@ -13,7 +13,7 @@ var members []model.Member
 func getMembers (w http.ResponseWriter, r *http.Request){
 	w.Header().Set("Content-Type", "application/json")
 	db := database.Connect_to_DB()
-	members = database.GetMembers_DB(db, members)
+	members = GetMembers_DB(db, members)
 	fmt.Println(members)
 	json.NewEncoder(w).Encode(members)
 }
@@ -28,7 +28,7 @@ func deleteMembers (w http.ResponseWriter, r *http.Request) {
 			members = append(members[:index], members[index+1:]...)
 			fmt.Println("Delete from Database")
 			db := database.Connect_to_DB()
-			database.DelMembers_DB(db, item.Person_id)
+			DelMembers_DB(db, item.Person_id)
 			break
 		}
 	}
@@ -42,7 +42,7 @@ func getMember (w http.ResponseWriter, r *http.Request){
 	for _, item := range members {
 		if item.Person_id == params["id"] {
 			db := database.Connect_to_DB()
-	        database.GetMember_DB(db, members, item.Person_id)
+	        GetMember_DB(db, members, item.Person_id)
 			json.NewEncoder(w).Encode(item)
 		}
 	}
@@ -57,7 +57,7 @@ func addMember (w http.ResponseWriter, r *http.Request){
 	    return
     }
 	db := database.Connect_to_DB()
-	database.AddMember_DB(db, member)
+	AddMember_DB(db, member)
 	members = append(members, member)
 	json.NewEncoder(w).Encode(members)
 }
@@ -75,7 +75,7 @@ func updateMember (w http.ResponseWriter, r *http.Request){
 	            return
             }
 			db := database.Connect_to_DB()
-	        database.UpdateMember_DB(db, member)
+	        UpdateMember_DB(db, member)
 	        members = append(members, member)
 			fmt.Println(members)
 			json.NewEncoder(w).Encode(members)
