@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login and SignUp form</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+    </head>
+    <body>
+        <div class="container">
+          <div id="login-form">
+            <h2>Login</h2>
+            <div class="form-group">
+              <label for="login-email">Email:</label>
+              <input type="email" id="login-email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+              <label for="login-password">Password:</label>
+              <input type="password" id="login-password" placeholder="Enter your password">
+            </div>
+            <div class="form-group">
+              <button onclick="login()">Login</button>
+            </div>
+            <div class="toggle-form">
+              Don't have an account? <a onclick="toggleSignUp()">Sign Up</a>
+            </div>
+          </div>
+      
+          <div id="signup-form" style="display: none;">
+            <h2>Sign Up</h2>
+            <div class="form-group">
+              <label for="signup-name">ID:</label>
+              <input type="text" id="signup-ID" placeholder="Enter ID">
+            </div>
+            <div class="form-group">
+              <label for="signup-email">Email:</label>
+              <input type="email" id="signup-email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+              <label for="signup-password">Password:</label>
+              <input type="password" id="signup-password" placeholder="Enter your password">
+            </div>
+            <div class="form-group">
+              <button onclick="signup()">Sign Up</button>
+            </div>
+            <div class="toggle-form">
+              Already have an account? <a onclick="toggleLogin()">Login</a>
+            </div>
+          </div>
+        </div>
+      
+        <script>
+          function toggleSignUp() {
+            document.getElementById("login-form").style.display = "none";
+            document.getElementById("signup-form").style.display = "block";
+          }
+      
+          function toggleLogin() {
+            document.getElementById("login-form").style.display = "block";
+            document.getElementById("signup-form").style.display = "none";
+          }
+      
+          function login() {
+            // Your login logic here
+            var email = document.getElementById('login-email').value;
+            var password = document.getElementById('login-password').value;
+            alert('Login successful for: ' + email);
+          }
+      
+          function signup() {
+            // Your signup logic here
+            var name = document.getElementById('signup-name').value;
+            var email = document.getElementById('signup-email').value;
+            var password = document.getElementById('signup-password').value;
+            alert('Signup successful for: ' + name + ' (' + email + ')');
+          }
+        </script>
+      </body>
+      </html>
